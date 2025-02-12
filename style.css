@@ -1,0 +1,220 @@
+:root {
+    /* White */
+    --color-white: hsl(0, 0%, 100%);
+
+    /* Stone */
+    --color-stone-100: hsl(30, 54%, 90%);
+    --color-stone-150: hsl(30, 18%, 87%);
+    --color-stone-600: hsl(30, 10%, 34%);
+    --color-stone-900: hsl(24, 5%, 18%);
+
+    /* Brown */
+    --color-brown-800: hsl(14, 45%, 36%);
+
+    /* Rose */
+    --color-rose-800: hsl(332, 51%, 32%);
+    --color-rose-50: hsl(330, 100%, 98%);
+
+    /* Breakpoints */
+    --bp-mobile: 375px;
+    --bp-desktop: 1440px;
+}
+
+
+/* ✅ Font Imports */
+@font-face {
+    font-family: 'Young Serif';
+    src: url('./assets/fonts/young-serif/YoungSerif-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/Outfit-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/Outfit-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('./assets/fonts/Outfit-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* ✅ Reset */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* ✅ Typography */
+h1 {
+    font-family: 'Young Serif', serif;
+    font-weight: 400;
+    padding: 2rem 0;
+}
+
+h2 {
+    font-family: 'Young Serif', serif;
+    font-weight: 400;
+    padding: 1rem 0;
+    color: var(--color-brown-800);
+}
+
+.firstP {
+    padding-bottom: 1rem;
+}
+
+/* ✅ Preparation Time Section */
+.prep-time {
+    background-color: var(--color-rose-50);
+    padding-left: 2rem;
+}
+
+.prep-time h3 {
+    padding: 1rem 0;
+    color: var(--color-rose-800);
+}
+
+/* ✅ Bullet Points Fix */
+ul,
+ol {
+    list-style-position: outside;
+    padding-left: 20px;
+}
+
+li {
+    text-indent: -20px;
+    /* Fixes text alignment */
+    padding-left: 40px;
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+}
+
+/* ✅ Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    text-align: left;
+}
+
+/* ✅ Ordered List (Custom Numbering) */
+.instructions ol {
+    list-style: none;
+    counter-reset: list-counter;
+    padding-left: 0;
+}
+
+.instructions ol li {
+    counter-increment: list-counter;
+    position: relative;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    color: var(--color-stone-900);
+}
+
+.instructions ol li::before {
+    content: counter(list-counter) ".";
+    font-weight: 700;
+    color: var(--color-brown-800);
+    margin-right: 8px
+}
+
+/* ✅ Body Styling */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-stone-100);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    line-height: 2rem;
+}
+
+/* ✅ Main Container */
+main {
+    max-width: 800px;
+    width: 90%;
+    background-color: var(--color-white);
+    border-radius: 30px;
+    padding: 30px;
+}
+
+footer {
+    text-align: center;
+    /* Centers text inside the footer */
+    width: 100%;
+    /* Ensures full-width footer */
+}
+
+
+/* ✅ Paragraph Wrapping */
+p {
+    overflow-wrap: break-word;
+}
+
+/* ✅ Image Styling */
+.imgOmelette {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.imgOmelette img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+/* ✅ Mobile Responsive Design */
+@media (max-width: 376px) {
+    main {
+        border-radius: 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .container {
+        padding: 0rem 2rem;
+    }
+
+    p,
+    li,
+    ol {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    body {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+
+}
